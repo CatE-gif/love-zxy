@@ -32,26 +32,73 @@
 </head>
 <body>
 
-  <h1>🎆 新年快乐 🎆</h1>
+  <h1 id="title"></h1>
 
-  <p>这个春节</p>
-  <p>我想把最重要的话</p>
-  <p>留给你</p>
+  <div id="content"></div>
 
-  <p>谢谢你</p>
-  <p>出现在我的生活里</p>
-  <p>让很多普通的日子</p>
-  <p>都变得值得期待</p>
+  <div class="sign" id="sign"></div>
 
-  <p>新的一年</p>
-  <p>我希望</p>
-  <p>还能牵着你的手</p>
-  <p>一起吃很多顿饭</p>
-  <p>走很多路</p>
-  <p>把平凡的日子</p>
-  <p>过成值得纪念的回忆 ❤️</p>
+  <script>
+    const titleText = "🎆 新年快乐 🎆";
 
-  <div class="sign">—— 爱你的我</div>
+    const lines = [
+      "这个春节",
+      "我想把最重要的话",
+      "留给你",
+      "",
+      "谢谢你",
+      "出现在我的生活里",
+      "让很多普通的日子",
+      "都变得值得期待",
+      "",
+      "新的一年",
+      "我希望",
+      "还能牵着你的手",
+      "一起吃很多顿饭",
+      "走很多路",
+      "把平凡的日子",
+      "过成值得纪念的回忆 ❤️"
+    ];
+
+    const signText = "—— 爱你的我";
+
+    const titleEl = document.getElementById("title");
+    const contentEl = document.getElementById("content");
+    const signEl = document.getElementById("sign");
+
+    let delay = 0;
+
+    // 标题打字
+    titleText.split("").forEach((char, i) => {
+      setTimeout(() => {
+        titleEl.innerHTML += char;
+      }, delay + i * 120);
+    });
+
+    delay += titleText.length * 120 + 600;
+
+    // 正文逐行逐字
+    lines.forEach(line => {
+      const p = document.createElement("p");
+      contentEl.appendChild(p);
+
+      line.split("").forEach((char, i) => {
+        setTimeout(() => {
+          p.innerHTML += char;
+        }, delay + i * 80);
+      });
+
+      delay += line.length * 80 + 400;
+    });
+
+    // 签名
+    signText.split("").forEach((char, i) => {
+      setTimeout(() => {
+        signEl.innerHTML += char;
+      }, delay + i * 120);
+    });
+  </script>
 
 </body>
+
 </html>
