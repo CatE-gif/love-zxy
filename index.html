@@ -35,44 +35,22 @@
 <body>
 
   <!-- 🎵 背景音乐 -->
-  <audio id="bgm" autoplay loop muted playsinline>
+  <audio controls>
     <source src="music/fenshenqingren.mp3" type="audio/mpeg">
   </audio>
+
 
   <h1 id="title"></h1>
   <div id="content"></div>
   <div class="sign" id="sign"></div>
 
   <script>
-    // =============================
-    // 🎵 iPhone 自动播放优化逻辑
-    // =============================
 
-    window.addEventListener("load", function () {
-      const audio = document.getElementById("bgm");
 
-      // 尝试自动播放（静音状态）
-      audio.play().then(() => {
-        // 0.5秒后取消静音
-        setTimeout(() => {
-          audio.muted = false;
-        }, 500);
-      }).catch(() => {
-        // 如果被拦截，第一次触摸时播放
-        document.addEventListener("touchstart", function () {
-          audio.muted = false;
-          audio.play();
-        }, { once: true });
-      });
-    });
-
-    // =============================
-    // 原打字效果逻辑
-    // =============================
-
-    const titleText = "🎆 新年快乐 🎆";
+    const titleText = "🌟 星宇的专属信封 ☪️";
 
     const lines = [
+      "[点击⬆️播放按钮有音乐哟]",
       "乖乖",
       "这是我们在一起后的第二个情人节❤️，也是第二个春节🎆",
       "很遗憾，这一次我还是不能陪在你身边一起过🥺",
@@ -83,7 +61,7 @@
       "但这一次的情人节➕春节🎊，我想给你的祝福💖的方式也变得和以往不一样一点点",
       "从我认识你，知道你特别想考公📚那天开始📝",
       "每次我去可以祈福的地方🙏，都会替你默默祈祷，希望你顺利上岸🍀",
-      "可是前段时间我去鸡鸣寺的时候，我没有只求上岸",
+      "可是前段时间我去鸡鸣寺的时候，我没有求上岸",
       "我为你祈求的是快乐🌸、健康、平安和顺利✨",
       "因为我慢慢明白，此时此刻的快乐😊，才是真正重要的快乐",
       "所以这封信里💗，我也想郑重地祝你快乐、健康、平安顺利",
@@ -97,8 +75,8 @@
       "今年的情人节💘，我依然缺席在你身边🥺",
       "但我精心准备的礼物🎁和我满满的爱，会随着快递📦一起到达你身边💝",
       "那天你问我为什么没有隐藏物流",
-      "因为我对你的爱❤️不需要隐藏",
-      "而且我希望你能早点知道，早点开心😊一点点✨",
+      "因为我对你的爱❤️不需要隐藏，我也喜欢大大方方的爱❤️",
+      "而且我认为你早点知道，就会早点开心😊✨",
       "再过一个月🫶，那个缺席的我，也会真的站在你面前",
       "此时我又想起跨年的那天🎆，我们互相发的消息",
       "我说你现在不想我，我就给你大嘴巴子😤",
@@ -109,10 +87,10 @@
       "在情人节和春节相遇的这个特别节日🎇里",
       "希望从今往后✨，你和我都能开心快乐地过好每一秒钟",
       "我爱你呀，我的乖乖乖乖乖乖乖乖乖乖乖宝💕😘",
-      "又想亲你嘴巴😭💋了"
+      "😘又想亲你嘴巴😭了"
     ];
 
-    const signText = "—— 爱你的我";
+    const signText = "—— 爱你的我❤️";
 
     const titleEl = document.getElementById("title");
     const contentEl = document.getElementById("content");
